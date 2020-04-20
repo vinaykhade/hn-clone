@@ -29,7 +29,7 @@ class List extends Component {
             {...story} 
           />
         ))}
-        <Styled.MoreBtn onClick={() => history.push(`/news/page/${pageNum+1}`)}>More</Styled.MoreBtn>
+        <Styled.MoreBtn onClick={() => history.push(`/hn-clone/news/page/${pageNum+1}`)}>More</Styled.MoreBtn>
       </Styled.ListWrapper>
     );
   }

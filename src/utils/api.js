@@ -4,7 +4,7 @@ export const callApi = (url, apiMethod, query) =>
   new Promise((resolve, reject) => {
     axios({
       method: apiMethod,
-      url: `http://hn.algolia.com/api/v1/${  url}`,
+      url: `https://hn.algolia.com/api/v1/${  url}`,
       data: apiMethod === 'POST' || apiMethod === 'post' ? query : undefined, // API post parameters,
       params: apiMethod === 'GET' || apiMethod === 'get' ? query : undefined, // API get params
       headers: {
