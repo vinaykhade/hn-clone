@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { withRouter } from "react-router";
 import App from './App';
 import * as newsFeedActions from '../../actions/newsFeed';
 import * as upvoteActions from '../../actions/upvote';
 import * as hideFeedActions from '../../actions/hideFeed';
 
-import { withRouter } from "react-router";
 
 function mapStateToProperties(state, ownProps) {
   const { upvote, newsFeed, hiddenFeeds } = state;
