@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem';
 
@@ -13,6 +14,7 @@ class List extends Component {
 
   render() {
     const { stories, pageNum, upvote, hiddenFeeds } = this.props;
+    const linkTo = `/news/page/${pageNum+1}`;
     return (
       <Styled.ListWrapper>
         {
@@ -29,7 +31,9 @@ class List extends Component {
             {...story} 
           />
         ))}
-        <Styled.MoreBtn onClick={() => history.push(`/hn-clone/news/page/${pageNum+1}`)}>More</Styled.MoreBtn>
+        <Styled.MoreBtn>
+        <Link to={linkTo}>More</Link>
+        </Styled.MoreBtn>
       </Styled.ListWrapper>
     );
   }
