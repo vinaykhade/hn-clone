@@ -10,15 +10,15 @@ export const ListWrapper = styled.ul`
   flex-direction: column;
 `;
 
-export const MoreBtn = styled.span`
-  display: block;
-  margin: 10px 0;
-  color: black;
-  text-align: center;
-  background: orange;
-  font-size: 14px;
-  padding: 10px 20px;
-  border-radius: 3px;
-  width: 80px;
-  cursor: pointer;
-`;
+export const MoreBtn = {
+  display: 'block',
+  margin: '10px 0',
+  color: 'black',
+  textAlign: 'center',
+  background: 'orange',
+  fontSize: '14px',
+  padding: '10px 20px',
+  borderRadius: '3px',
+  width: '80px',
+  cursor: 'pointer',
+}

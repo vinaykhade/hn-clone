@@ -31,9 +31,9 @@ class List extends Component {
             {...story} 
           />
         ))}
-        <Styled.MoreBtn>
-        <Link to={linkTo}>More</Link>
-        </Styled.MoreBtn>
+
+        <Link style={Styled.MoreBtn} to={linkTo}>More</Link>
+       
       </Styled.ListWrapper>
     );
   }
