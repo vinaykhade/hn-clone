@@ -12,11 +12,22 @@ import history from './utils/history';
 import configureStore from './configureStore';
 
 import GlobalStyles from './styles/globals';
-import App from './components/App';
+import Routes from './routes';
+
+import { loadState, saveState } from './reducers/localStorage';
+
 // import registerServiceWorker from './registerServiceWorker';
 
-const initialState = {};
+const initialState = loadState();
 const store = configureStore(initialState, history);
+
+store.subscribe(() => {
+  saveState({
+    upvote: store.getState().upvote,
+    hiddenFeeds: store.getState().hiddenFeeds
+  });
+});
+
 const MOUNT_NODE = document.getElementById('root');
 
 const render = () => {
@@ -24,7 +35,7 @@ const render = () => {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <GlobalStyles />
-        <App />
+        <Routes history={history}/>
       </ConnectedRouter>
     </Provider>,
     MOUNT_NODE,
