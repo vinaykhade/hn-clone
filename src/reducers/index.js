@@ -15,7 +15,7 @@ import hiddenFeeds from './hideFeed';
  */
 export default function createReducer() {
   const rootReducer = combineReducers({
-    router: connectRouter(history),
+    // router: connectRouter(history),
     newsFeed,
     upvote,
     hiddenFeeds

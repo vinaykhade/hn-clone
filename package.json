@@ -1,8 +1,6 @@
 {
   "name": "hn-clone",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "http://vinaykhade.github.io/hn-clone",
   "engines": {
     "node": "12.11.1",
     "npm": "6.11.3"

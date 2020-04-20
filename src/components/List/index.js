@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem';
 
-import history from '../../utils/history';
 
 import * as Styled from './styles';
 

@@ -5,10 +5,10 @@ import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { ConnectedRouter } from 'connected-react-router';
+// import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 
-import history from './utils/history';
+// import history from './utils/history';
 import configureStore from './configureStore';
 
 import GlobalStyles from './styles/globals';
@@ -19,7 +19,7 @@ import { loadState, saveState } from './reducers/localStorage';
 // import registerServiceWorker from './registerServiceWorker';
 
 const initialState = loadState();
-const store = configureStore(initialState, history);
+const store = configureStore(initialState);
 
 store.subscribe(() => {
   saveState({
@@ -33,10 +33,8 @@ const MOUNT_NODE = document.getElementById('root');
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <ConnectedRouter history={history}>
         <GlobalStyles />
-        <Routes history={history}/>
-      </ConnectedRouter>
+        <Routes />
     </Provider>,
     MOUNT_NODE,
   );

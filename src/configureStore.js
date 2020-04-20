@@ -3,13 +3,13 @@
  */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
+// import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
 
 import createReducer from './reducers';
 import rootSaga from './sagas';
 
-export default function configureStore(initialState = {}, history) {
+export default function configureStore(initialState = {}) {
   let composeEnhancers = compose;
   const reduxSagaMonitorOptions = {};
 
@@ -37,7 +37,7 @@ export default function configureStore(initialState = {}, history) {
   // 3. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
     sagaMiddleware,
-    routerMiddleware(history),
+    // routerMiddleware(history),
   ];
 
   const enhancers = [applyMiddleware(...middlewares)];
