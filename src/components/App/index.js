@@ -1,18 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-      </header>
-    </div>
+import App from './App';
+import * as newsFeedActions from '../../actions/newsFeed';
+import * as upvoteActions from '../../actions/upvote';
+import * as hideFeedActions from '../../actions/hideFeed';
+
+import { withRouter } from "react-router";
+
+function mapStateToProperties(state, ownProps) {
+  const { upvote, newsFeed, hiddenFeeds } = state;
+  return {
+    newsFeed,
+    upvote,
+    hiddenFeeds
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      ...newsFeedActions,
+      ...upvoteActions,
+      ...hideFeedActions
+    },
+    dispatch,
   );
 }
 
-export default App;
+export default withRouter(connect(
+  mapStateToProperties,
+  mapDispatchToProps,
+)(App));
