@@ -23,10 +23,11 @@ class App extends React.PureComponent {
         const { newsFeed } = this.props;  
         const pageNum = this.props.match.params.pageNum || 1;
         return (
-            <Styled.Wrapper>
-                <Styled.Title>Hacker News Reader</Styled.Title>
-                <List {...this.props} stories={newsFeed} pageNum={parseInt(pageNum)}/>
-            </Styled.Wrapper>
+            <h1>Hacker News Reader</h1>
+            // <Styled.Wrapper>
+            //     <Styled.Title>Hacker News Reader</Styled.Title>
+            //     <List {...this.props} stories={newsFeed} pageNum={parseInt(pageNum)}/>
+            // </Styled.Wrapper>
         );
     }
 }
