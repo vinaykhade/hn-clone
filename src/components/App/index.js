@@ -8,7 +8,7 @@ import * as upvoteActions from '../../actions/upvote';
 import * as hideFeedActions from '../../actions/hideFeed';
 
 
-function mapStateToProperties(state, ownProps) {
+function mapStateToProperties(state) {
   const { upvote, newsFeed, hiddenFeeds } = state;
   return {
     newsFeed,

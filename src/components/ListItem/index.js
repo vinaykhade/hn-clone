@@ -1,5 +1,6 @@
 import React from 'react';
 
+import propTypes from 'prop-types';
 import * as Styled from './styles';
 
 const ListItem = ({ objectID, upvoted, url, title, points, num_comments, author, created_at_i, upvoteNews, downvoteNews, hideNewsById }) => {
@@ -27,3 +28,31 @@ const ListItem = ({ objectID, upvoted, url, title, points, num_comments, author,
 };
 
 export default ListItem;
+
+ListItem.defaultProp = {
+  objectID: '',
+  upvoted: false,
+  url: '',
+  title: 'NA',
+  points: 0,
+  num_comments: 0,
+  author: 'Unknown',
+  created_at_i: 0,
+  upvoteNews: () => {},
+  downvoteNews: () => {},
+  hideNewsById: () => {}
+};
+
+ListItem.propTypes = {
+  objectID: propTypes.string,
+  upvoted: propTypes.bool,
+  url: propTypes.string,
+  title: propTypes.string,
+  points: propTypes.number,
+  num_comments: propTypes.number,
+  author: propTypes.string,
+  created_at_i: propTypes.number,
+  upvoteNews: propTypes.func,
+  downvoteNews: propTypes.func,
+  hideNewsById: propTypes.func
+};

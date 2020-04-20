@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+const handleSuccess = response => {
+  const { data } = response;
+  return data;
+};
+
+
 export const callApi = (url, apiMethod, query) =>
   new Promise((resolve, reject) => {
     axios({
@@ -19,9 +25,4 @@ export const callApi = (url, apiMethod, query) =>
         reject(error);
     });
   });
-
-const handleSuccess = response => {
-  const { data } = response;
-  return data;
-};
 
