@@ -21,4 +21,4 @@ export const MoreBtn = {
   borderRadius: '3px',
   width: '80px',
   cursor: 'pointer',
-}
+};
