@@ -4,7 +4,7 @@ import { Switch, Route , BrowserRouter} from 'react-router-dom';
 import NewsFeed from './components/App';
 
 const Routes = () => (
-  <BrowserRouter  basename="/hn-clone">
+  <BrowserRouter>
     <Switch>
       <Route exact path="/" component={() => <NewsFeed />} />
       <Route exact path="/news/page/:pageNum" component={() => <NewsFeed />} />
