@@ -1,6 +1,4 @@
 import axios from 'axios';
-import history from './history';
-
 
 export const callApi = (url, apiMethod, query) =>
   new Promise((resolve, reject) => {

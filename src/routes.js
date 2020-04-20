@@ -6,6 +6,7 @@ import NewsFeed from './components/App';
 const Routes = () => (
     <Switch>
       <Route exact path="/" component={() => <NewsFeed />} />
+      <Route exact path="/hn-clone" component={() => <NewsFeed />} />
       <Route exact path="/news/page/:pageNum" component={() => <NewsFeed />} />
     </Switch>
   );
